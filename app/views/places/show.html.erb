@@ -1,34 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @place.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @place.address %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @place.description %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @place.phone %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @place.website %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @place.user_id %>
-</p>
+<div class="row">
+  <div class="col-md-3">
+    <h3><%= @place.name %></h3>
+    <p><%= @place.address %></p>
+    <p><%= @place.phone %></p>
+    <p><%= @place.website %></p>
+    <p><%= @place.description %></p>
+  </div>
+</div>
 
 <%= @place.latitude %>
 <%= @place.longitude %>
