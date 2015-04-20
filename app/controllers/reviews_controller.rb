@@ -10,19 +10,28 @@ class ReviewsController < ApplicationController
 
       respond_to do |format|
         if @review.save
-          format.html { redirect_to @review, notice: 'Review was successfully created.' }
-          format.json { render :show, status: :created, location: @review }
+          format.html { redirect_to place_path(@review.place), notice: 'Review was successfully created.' }
         else
-          format.html { render :new }
-          format.json { render json: @review.errors, status: :unprocessable_entity }
+          redirect_to place_path(@review.place), notice: "You'll need to try that again"
         end
       end
     end
     
     def update
+        respond_to do |format|
+        if @review.update(review_params)
+          format.html { redirect_to place_path(@review.place), notice: 'Review was successfully updated.' }
+        else
+          redirect_to place_path(@review.place), notice: "You'll need to try that again"
+        end
+      end
     end
     
     def destroy
+      @review.destroy
+      respond_to do |format|
+        format.html { redirect_to place_path(review.place), notice: 'Review was deleted.' }
+      end
     end
     
     private
