@@ -18,6 +18,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'geocoder'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+
+
 group :development, :test do
   
   gem 'byebug'
@@ -25,8 +27,3 @@ group :development, :test do
   gem 'spring'
 end
 
-group :production do
-  gem 'pg',             '0.17.1'
-  gem 'rails_12factor', '0.0.2'
-  gem 'unicorn',        '4.8.3'
-end
